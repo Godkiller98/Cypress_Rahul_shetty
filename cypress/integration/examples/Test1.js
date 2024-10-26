@@ -17,6 +17,16 @@ describe('My First Test', () => {
       console.log(text2);
      
     })
+    cy.get('.brand').should('have.text','GREENKART')
+cy.get(".brand").then((logoElement)=>{
+  
+ console.log(logoElement.text)
+ cy.log(logoElement.text)
+})
+
+cy.get("img[alt='Cart']").click()
+cy.contains('PROCEED TO CHECKOUT').click()
+cy.contains('Place Order').click()
   });
   
 });
